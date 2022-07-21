@@ -1,0 +1,120 @@
+| doctype html | html(lang=&apos;en&apos;) | head |
+meta(property=&apos;og:title&apos; content=&apos;&#x1F319; Ma S&oacute;i One
+Night&apos;) | meta(property=&apos;og:description&apos; content=&apos;Ma
+S&oacute;i One Night Online&apos;) | meta(property=&apos;og:url&apos;
+content=&apos;https://huybui.click&apos;) | meta(property=&apos;og:image&apos;
+content=&apos;https://is3-ssl.mzstatic.com/image/thumb/Purple113/v4/5b/6d/1e/5b6d1eac-9db7-9375-2691-a11910941da9/source/512x512bb.jpg&apos;)
+| meta(charset=&apos;UTF-8&apos;) | meta(name=&apos;description&apos;
+content=&apos;Ma S&oacute;i One Night Online&apos;) |
+meta(name=&apos;keywords&apos; content=&apos;Ma S&oacute;i, One Night,
+Online&apos;) | meta(name=&apos;author&apos; content=&apos;Andrei Bui&apos;) |
+script(src=&apos;https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js&apos;)
+|
+script(src=&apos;https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js&apos;)
+|
+script(src=&apos;https://cdnjs.cloudflare.com/ajax/libs/lamejs/1.2.1/lame.min.js&apos;)
+|
+script(src=&apos;https://cdn.webrtc-experiment.com/MediaStreamRecorder.js&apos;)
+| link(rel=&apos;stylesheet&apos;
+href=&apos;//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css&apos;)
+| link(rel=&apos;stylesheet&apos;
+href=&apos;https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css&apos;)
+| link(rel=&apos;stylesheet&apos;
+href=&apos;https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css&apos;)
+|
+script(src=&apos;https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js&apos;)
+| //meta(http-equiv=&apos;refresh&apos; content=&apos;4&apos;) |
+meta(name=&apos;viewport&apos;, content=&apos;width=device-width,
+initial-scale=0.5, maximum-scale=0.5, viewport-fit=cover&apos;) |
+meta(name=&apos;theme-color&apos; content=&apos;#18191a&apos;) | title Ma
+S&oacute;i One Night &#x1F319; | link( type=&quot;image/icon type&quot;
+rel=&apos;icon&apos;
+href=&apos;https://is3-ssl.mzstatic.com/image/thumb/Purple113/v4/5b/6d/1e/5b6d1eac-9db7-9375-2691-a11910941da9/source/512x512bb.jpg&apos;)
+| link(type=&apos;text/css&apos; rel=&apos;stylesheet&apos;
+href=&apos;./css/room.css&apos;) | link(type=&apos;text/css&apos;
+rel=&apos;stylesheet&apos; href=&apos;./css/game.css&apos;) |
+link(type=&apos;text/css&apos; rel=&apos;stylesheet&apos;
+href=&apos;./css/rungame.css&apos;) |
+meta(name=&apos;apple-mobile-web-app-capable&apos; content=&apos;yes&apos;) |
+link(rel=&apos;manifest&apos; href=&apos;./css/manifest.json&apos;) |
+meta(name=&apos;mobile-web-app-capable&apos; content=&apos;yes&apos;) |
+meta(name=&apos;apple-mobile-web-app-status-bar-style&apos;
+content=&apos;black&apos;) | //meta(name=&apos;apple-touch-fullscreen&apos;
+content=&apos;yes&apos;) | body | audio#audio( loop=&apos;true&apos; ) |
+source(src=&apos;./js/silence.mp3&apos; type=&apos;audio/mpeg&apos;) |
+//./js/silence.mp3 | include ./snows.pug | div#room-header | div#room-info |
+div#room-info-singles | p &#x1F4CD; !{room} | p#capt-label | p
+&#x1F468;&#x1F3FB;&zwj;&#x1F4BC; !{name} | div#player-list | //p
+&#x26A0;&#xFE0F;Load l&#x1EA1;i trang n&#x1EBF;u g&#x1EB7;p l&#x1ED7;i |
+//div#nav-button | button#restart-button &#x1F579;&#xFE0F; |
+button#reload-button &#x1F511; | button#home-button &#x1F3E0; |
+button#load-button &#x1F503; | include ./settings.pug |
+div#flex-table(style=&apos;display: none;&apos;) |
+div#table-chat(style=&apos;display: none;&apos;) |
+div#chat-text(style=&apos;display: inline-block;font-size: 21px&apos;) &#x1F48C;
+Chat | button#mute-button(onclick=&apos;stopAllAudioMisc();&apos;
+style=&apos;display: inline-block;&apos;) &#x1F507; |
+button#chat-title(value=&apos;M&#x1EDF; r&#x1ED9;ng&#x27A1;&#xFE0F;&apos;
+onclick=&apos;chatToggle();&apos; style=&apos;display: inline-block;&apos;)
+&#x27A1;&#xFE0F; | div#chat-log | div#p-chat | | &#x1F44B;Xin ch&agrave;o |
+span.chat-sender(style=&apos;color:#0084ff;&apos;) !{name} | | , chat s&#x1EBD;
+hi&#x1EC3;n th&#x1ECB; t&#x1EA1;i &dstrok;&acirc;y. Vi&#x1EC7;c load l&#x1EA1;i
+trang s&#x1EBD; m&#x1EA5;t &dstrok;i t&#x1EA5;t c&#x1EA3; n&#x1ED9;i dung! |
+div#table-info(style=&apos;display: none;&apos;) | button#role-button &#x274C;
+Ch&#x1EE9;c n&abreve;ng &#x274C; | //p(style=&apos;font-size:5&apos;) &#x1F4A1;
+Click ch&#x1EE9;c n&abreve;ng &dstrok;&#x1EC3; &dstrok;&#x1ECD;c th&ecirc;m |
+h2#original-role | h2#round | div#timer-sect | h2 &#x23F0; Th&#x1EDD;i gian: |
+canvas#timer-bar | div#timer-ins(style=&apos;display: none&apos;) | //p |
+//|&#x1F5EF;&#xFE0F; Th&#x1EA3;o lu&#x1EAD;n gi&#x1EDB;i h&#x1EA1;n trong |
+//span(style=&apos;color:red;font-weight:bolder&apos;) 5-7 ph&uacute;t | //|,
+sau &dstrok;&oacute; ch&#x1EC9; c&#x1EA7;n 1 ng&#x1B0;&#x1EDD;i b&#x1EA5;m
+n&uacute;t b&ecirc;n d&#x1B0;&#x1EDB;i | p#vote-time | div |
+button#update-button(style=&apos;display: none&apos;) &#x1F525;Treo c&#x1ED5; |
+button#playerlist-button(style=&apos;display: none;&apos;) &#x1F4D1;Danh
+s&aacute;ch&#x1F53B; | div#listing(style=&apos;display:
+none;margin-top:-15px&apos;) | div#table(style=&apos;display: none;border: solid
+1px;border-color: #30363d;&apos;) | form(id=&apos;chat-section&apos;
+action=&quot;javascript:void(0);&quot;) | input#chat-input(name=&apos;chat&apos;
+type=&apos;text&apos; maxlength=&quot;107&quot; placeholder=&apos;Nh&#x1EAD;p
+n&#x1ED9;i dung chat...&apos;) | button#noti-button(style=&apos;margin: 2px;
+padding:5px;width:70px;display: inline-block;&apos;) &#x1F680;G&#x1EED;i |
+button#clearLog-button(style=&apos;margin: 2px; padding:5px;width:70px;display:
+inline-block;&apos;) &#x274C;X&oacute;a |
+button#record-button(style=&apos;margin: 2px; padding:5px;width:80px;display:
+inline-block;&apos;) &#x1F534;Voice | //p &#x1F6D1;L&agrave;m ch&#x1EE9;c
+n&abreve;ng t&#x1EA1;i khung n&agrave;y khi t&#x1EDB;i &#x1F530;v&ograve;ng
+c&#x1EE7;a b&#x1EA1;n | p#cards-table | button#trans-button &#x1F4E2;Google
+D&#x1ECB;ch | p#trans-content &#x1F536; Doppleganger: Nh&acirc;n b&#x1EA3;n ||
+Werewolf: S&oacute;i || Minion: Ph&#x1EA3;n b&#x1ED9;i || Mason: Sinh
+&dstrok;&ocirc;i || Seer: Ti&ecirc;n tri || Apprentice Seer: Ti&ecirc;n tri
+t&#x1EAD;p s&#x1EF1; || P.I: Th&aacute;m t&#x1EED; || Robber:
+C&#x1B0;&#x1EDB;p(tr&#x1ED9;m) || Witch: Ph&ugrave; Th&#x1EE7;y || Troublemaker:
+Ph&aacute; r&#x1ED1;i(tr&aacute;o b&agrave;i) || Drunk: Say r&#x1B0;&#x1EE3;u ||
+Insomniac: M&#x1EA5;t ng&#x1EE7; || Hunter: Th&#x1EE3; s&abreve;n || Villager:
+D&acirc;n l&agrave;ng || Tanner: Ch&aacute;n &dstrok;&#x1EDD;i | //h1
+&#x1F534;K&Eacute;O XU&#x1ED0;NG B&Ecirc;N D&#x1AF;&#x1EDA;I &dstrok;&#x1EC3;
+th&#x1EF1;c hi&#x1EC7;n ch&#x1EE9;c n&abreve;ng! | #game-manager | // Call your
+modal | a#backup-label(href=&apos;#animatedModal&apos;)
+&#x1F5D2;&#xFE0F;L&#x1ECB;ch s&#x1EED; game | // DEMO01 | #animatedModal | //
+THIS IS IMPORTANT! to close the modal, the class name has to match the name
+given on the ID class=&quot;close-animatedModal&quot; | .close-animatedModal | |
+&#x274C;&Dstrok;&Oacute;NG L&#x1EA0;I | .modal-content | // Your modal content
+goes here | p &#x1F5D2;&#xFE0F; L&#x1ECB;ch S&#x1EED; Game &#x1F5D2;&#xFE0F; |
+br | div#backup-content | // Call your modal |
+a#gamerun-label(href=&apos;#animatedModal2&apos;) &#x2B50;M&agrave;n h&igrave;nh
+l&#x1EDB;n | // DEMO02 | #animatedModal2 | // THIS IS IMPORTANT! to close the
+modal, the class name has to match the name given on the ID
+class=&quot;close-animatedModal&quot; | .close-animatedModal2 | |
+&#x274C;&Dstrok;&Oacute;NG L&#x1EA0;I | .modal-content2 | // Your modal content
+goes here | p &#x2B50; M&agrave;n H&igrave;nh L&#x1EDB;n &#x2B50; | br |
+//div#table-content | div#table-content |
+script(src=&apos;./socket.io/socket.io.js&apos;) | script. | var socket =
+io(&apos;/room/!{room}&apos;) | var local = {name: &apos;!{name}&apos;, role:
+&apos;none&apos;} | script(src=&apos;./js/settings.js&apos;) |
+script(src=&apos;./js/others.js&apos;) |
+script(src=&apos;./js/tableHandler.js&apos;) |
+script(src=&apos;./js/miscHandler.js&apos;) |
+script(src=&quot;//cdn.jsdelivr.net/npm/sweetalert2@11&quot;) |
+script(src=&apos;./js/animatedModal.min.js&apos;) | script. |
+$(&quot;#backup-label&quot;).animatedModal(); |
+$(&quot;#gamerun-label&quot;).animatedModal();

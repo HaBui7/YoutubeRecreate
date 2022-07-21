@@ -1,0 +1,35 @@
+header {
+  display: block;
+  text-align: center;
+  font-size: xx-large;
+  color: seagreen;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+* {
+  width: 100%;
+}
+#main {
+  display: flex;
+  width: auto;
+}
+#left {
+  width: 30%;
+}
+#right {
+  width: 15%;
+}
+
+footer {
+  display: block;
+  text-align: center;
+  font-size: xx-large;
+  color: seagreen;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.picture {
+  width: 100px;
+  border-radius: 50px;
+  box-shadow: 0 5px 5px black;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="werewolf-modal.css" />
+    <script>
+      let close = document.getElementById("close");
+
+      function closeModal() {
+        const modal_container = document.getElementById("modal_container");
+
+        modal_container.style.display = "none";
+      }
+      function openModal() {
+        const modal_container = document.getElementById("modal_container");
+        modal_container.style.display = "flex";
+      }
+    </script>
+    <title>Modal</title>
+  </head>
+  <body>
+    <div>hheheee</div>
+    <button class="open" id="open" onclick="openModal()">OPEN</button>
+    <div class="modal-container" id="modal_container">
+      <div class="modal">
+        <button class="close" id="close" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </body>
+</html>

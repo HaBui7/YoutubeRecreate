@@ -1,0 +1,20 @@
+#orderl li:nth-child(1) {
+  color: aqua;
+}
+.fp::first-line {
+  color: lightpink;
+}
+.sp::first-line {
+  color: lightgreen;
+}
+.tp::first-line {
+  color: lightgreen;
+}
+
+::selection {
+  color: red;
+  background: yellow;
+}
+form :required {
+  background-color: blanchedalmond;
+}
